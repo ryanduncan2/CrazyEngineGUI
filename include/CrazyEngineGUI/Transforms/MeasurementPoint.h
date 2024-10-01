@@ -1,0 +1,12 @@
+#ifndef CRAZYENGINEGUI_TRANSFORMS_MEASUREMENTPOINT_H
+#define CRAZYENGINEGUI_TRANSFORMS_MEASUREMENTPOINT_H
+
+namespace CEGUI
+{
+    enum MeasurementPoint
+    {
+        MIN, CENTRE, MAX
+    };
+}
+
+#endif
