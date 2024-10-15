@@ -12,6 +12,13 @@ namespace CEGUI
         m_Atlas.SetSource(2, CrazyEngine::Rectanglef(2.0f * texture->GetWidth() / 3.0f, 0.0f, texture->GetWidth() / 3.0f, texture->GetHeight()));
     }
 
+    Button::Button(std::int32_t x, std::int32_t y, std::uint32_t width, std::uint32_t height, TextureAtlasFill atlas, UIComponent* parent)
+        : UIComponent(x, y, width, height, parent),
+          m_Atlas(atlas),
+          m_State(ComponentState::NEUTRAL)
+    {
+    }
+
     Button::~Button()
     {
     }

@@ -24,8 +24,10 @@ namespace CEGUI
         Dropdown(std::int32_t x, std::int32_t y, std::uint32_t width, std::uint32_t height, CrazyEngine::Texture* texture, UIComponent* parent);
         ~Dropdown();
 
+        bool IsExpanded();
         bool IsClicked();
         ComponentState GetState();
+        std::vector<UIComponent*>& GetElements();
 
         void Update(CrazyEngine::Input& input, CrazyEngine::Clock& clock) override;
         void Draw(CrazyEngine::Renderer2D& renderer, const CrazyEngine::Vector4& colourEffect, float depth = 0.0f, int flags = 0) override;

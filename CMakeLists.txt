@@ -30,6 +30,7 @@ set(SRC_FILES
     src/Components/Checkbox.cpp
     src/Components/Label.cpp
     src/Components/Dropdown.cpp
+    src/Components/TextDropdown.cpp
 )
 
 add_library(CrazyEngineGUI STATIC ${SRC_FILES})

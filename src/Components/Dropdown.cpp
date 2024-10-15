@@ -27,6 +27,16 @@ namespace CEGUI
         return m_State;
     }
 
+    std::vector<UIComponent*>& Dropdown::GetElements()
+    {
+        return m_Elements;
+    }
+
+    bool Dropdown::IsExpanded()
+    {
+        return m_Expanded;
+    }
+
     bool Dropdown::IsClicked()
     {
         return m_State == ComponentState::CLICKED;
@@ -48,7 +58,6 @@ namespace CEGUI
             if (input.IsMouseButtonReleased(CrazyEngine::MouseButton::MOUSE_LEFT))
             {
                 m_Contracting = true;
-
                 return;
             }
         }
@@ -90,6 +99,7 @@ namespace CEGUI
     void Dropdown::Draw(CrazyEngine::Renderer2D& renderer, const CrazyEngine::Vector4& colourEffect, float depth, int flags)
     {
         m_Atlas.Draw(renderer, GetBounds(), GetColourEffect() * colourEffect, depth, flags);
+        
         UIComponent::Draw(renderer, colourEffect, depth, flags);
 
         if (m_Expanded)

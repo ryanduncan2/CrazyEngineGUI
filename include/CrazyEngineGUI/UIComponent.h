@@ -31,6 +31,7 @@ namespace CEGUI
         void Initialise(const std::int32_t x, const std::int32_t y, const std::uint32_t width, const std::uint32_t height);
 
     public:
+
         ~UIComponent();
 
         void AddChild(UIComponent* child);

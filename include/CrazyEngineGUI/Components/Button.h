@@ -14,7 +14,9 @@ namespace CEGUI
         TextureAtlasFill m_Atlas;
 
     public:
+
         Button(std::int32_t x, std::int32_t y, std::uint32_t width, std::uint32_t height, CrazyEngine::Texture* texture, UIComponent* parent);
+        Button(std::int32_t x, std::int32_t y, std::uint32_t width, std::uint32_t height, TextureAtlasFill atlas, UIComponent* parent);
         ~Button();
 
         ComponentState GetState();
