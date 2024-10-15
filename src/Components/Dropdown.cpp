@@ -20,6 +20,10 @@ namespace CEGUI
 
     Dropdown::~Dropdown()
     {
+        for (std::size_t i = 0; i < m_Elements.size(); ++i)
+        {
+            delete m_Elements[i];
+        }
     }
 
     ComponentState Dropdown::GetState()

@@ -1,0 +1,12 @@
+#ifndef CRAZYENGINEGUI_TEXTALIGNMENT_H_
+#define CRAZYENGINEGUI_TEXTALIGNMENT_H_
+
+namespace CEGUI
+{
+    enum TextAlignment
+    {
+        TEXT_ALIGN_LEFT, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTRE, TEXT_ALIGN_JUSTIFY
+    };
+}
+
+#endif

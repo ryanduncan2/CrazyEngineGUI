@@ -4,6 +4,7 @@
 #include "CrazyEngineGUI/Components/Dropdown.h"
 #include "CrazyEngineGUI/Components/Button.h"
 #include "CrazyEngineGUI/Fills/TextureAtlasFill.h"
+#include "CrazyEngineGUI/TextAlignment.h"
 
 #include "CrazyEngine/Graphics/TextureFont.h"
 
@@ -15,8 +16,9 @@ namespace CEGUI
 
         CrazyEngine::TextureFont* m_Font;
         TextureAtlasFill m_ElementAtlas;
+        TextAlignment m_TextAlignment;
         float m_TextScale;
-        float m_TextOffset;
+        float m_TextYOffset;
 
         std::int32_t m_SelectedIndex;
         std::vector<std::string> m_ElementLabels;
