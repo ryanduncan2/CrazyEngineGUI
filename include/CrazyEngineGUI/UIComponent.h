@@ -21,6 +21,7 @@ namespace CEGUI
         CrazyEngine::Rectanglef m_Bounds;
 
         CrazyEngine::Vector4 m_ColourEffect;
+        bool m_Enabled;
 
     protected:
 
@@ -48,6 +49,8 @@ namespace CEGUI
         CrazyEngine::Rectanglef GetBounds() { return m_Bounds; }
         TransformManager& GetTransformManager() { return m_TransformManager; }
         std::vector<UIComponent*>& GetChildren() { return m_Children; }
+
+        bool IsEnabled() const noexcept;
     };
 }
 

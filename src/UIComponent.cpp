@@ -8,19 +8,22 @@
 namespace CEGUI
 {
     UIComponent::UIComponent(UIComponent* parent)
-        : m_Parent(parent)
+        : m_Parent(parent),
+          m_Enabled(true)
     {
         Initialise(0, 0, 0, 0);
     }
 
     UIComponent::UIComponent(const std::uint32_t width, const std::uint32_t height, UIComponent* parent)
-        : m_Parent(parent)
+        : m_Parent(parent),
+          m_Enabled(true)
     {
         Initialise(0, 0, width, height);
     }
 
     UIComponent::UIComponent(const std::int32_t x, const std::int32_t y, const std::uint32_t width, const std::uint32_t height, UIComponent* parent)
-        : m_Parent(parent)
+        : m_Parent(parent),
+          m_Enabled(true)
     {
         Initialise(x, y, width, height);
     }
@@ -101,7 +104,10 @@ namespace CEGUI
     {
         for (std::uint32_t i = 0; i < m_Children.size(); ++i)
         {
-            m_Children[i]->Update(input, clock);
+            if (m_Children[i]->IsEnabled())
+            {
+                m_Children[i]->Update(input, clock);
+            }
         }
     }
 
@@ -109,7 +115,10 @@ namespace CEGUI
     {
         for (std::uint32_t i = 0; i < m_Children.size(); ++i)
         {
-            m_Children[i]->Draw(renderer, colourEffect * m_ColourEffect, depth + 0.1f + (0.1f * i), flags);
+            if (m_Children[i]->IsEnabled())
+            {
+                m_Children[i]->Draw(renderer, colourEffect * m_ColourEffect, depth + 0.1f + (0.1f * i), flags);
+            }
         }
     }
 
@@ -121,5 +130,10 @@ namespace CEGUI
     CrazyEngine::Vector4 UIComponent::GetColourEffect() const noexcept
     {
         return m_ColourEffect;
+    }
+
+    bool UIComponent::IsEnabled() const noexcept
+    {
+        return m_Enabled;
     }
 }
