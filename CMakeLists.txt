@@ -25,6 +25,7 @@ set(SRC_FILES
     src/Transforms/Translations/CentreTranslation.cpp
 
     src/Components/Canvas.cpp
+    src/Components/Panel.cpp
     src/Components/Image.cpp
     src/Components/Button.cpp
     src/Components/Checkbox.cpp
