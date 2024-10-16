@@ -50,6 +50,7 @@ namespace CEGUI
         TransformManager& GetTransformManager() { return m_TransformManager; }
         std::vector<UIComponent*>& GetChildren() { return m_Children; }
 
+        void SetEnabled(bool enabled) noexcept;
         bool IsEnabled() const noexcept;
     };
 }

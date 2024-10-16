@@ -132,6 +132,11 @@ namespace CEGUI
         return m_ColourEffect;
     }
 
+    void UIComponent::SetEnabled(bool enabled) noexcept
+    {
+        m_Enabled = enabled;
+    }
+
     bool UIComponent::IsEnabled() const noexcept
     {
         return m_Enabled;
